@@ -21,14 +21,14 @@ jobs:
             - name: Log in to Fly.io
               uses: superfly/flyctl-actions@1.4
               with:
-                args: "auth token ${{ secrets.FLY_API_TOKEN }}"
+                args: "auth token ${{ secrets.RAILWAY_API_TOKEN }}"
 
             - name: Build and Deploy to Fly.io
               uses: superfly/flyctl-actions@1.4
               with:
                 args: "deploy --remote-only"
               env:
-                FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
+                RAILWAY_API_TOKEN: ${{ secrets.RAILWAY_API_TOKEN }}
 
     frontend:
         name: Build & Deploy Frontend to Netlify
@@ -59,3 +59,4 @@ jobs:
                 deploy-message: "Deploy from GitHub Actions"
                 netlify-auth-token: ${{ secrets.NETLIFY_AUTH_TOKEN }}
                 netlify-site-id: ${{ secrets.NETLIFY_SITE_ID }}
+                vite-api-url: ${{ secrets.VITE_API_URL }}
