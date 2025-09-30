@@ -37,7 +37,7 @@ jobs:
             run: npm run build
             working-directory: ./frontend
 
-          - uses: nwtgck/action-netlify@v3.0.0
+          - uses: nwtgck/actions-netlify@v3.0.0
             with:
               publish-dir: ./frontend/dist
 
