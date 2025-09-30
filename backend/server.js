@@ -78,7 +78,7 @@ app.patch('/tasks/:id/completed', (req, res) => {
     res.json(task);
 });
 
-const PORT = process.env.PORT || 8000;
+const PORT = 8000;
 app.listen(PORT, '0.0.0.0', () => {
 	console.log(`Serveur démarré sur le port ${PORT}`);
 });
