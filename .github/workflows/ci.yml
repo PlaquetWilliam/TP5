@@ -11,24 +11,19 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # 1. Récupérer le code
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      # 2. Installer Node.js
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: 18
 
-      # 3. Installer les dépendances
       - name: Install dependencies
         run: npm install
 
-      # 4. Lancer les tests
       - name: Run tests
         run: npm test
-
-      # 5. Construire le projet
+        
       - name: Build project
         run: npm run build
