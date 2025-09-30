@@ -7,6 +7,7 @@ RUN npm install
 
 COPY . .
 
-EXPOSE $PORT
+# Railway définit automatiquement le port via PORT env var
+# On n'a pas besoin d'EXPOSE car Railway gère cela automatiquement
 
 CMD ["node", "server.js"]
